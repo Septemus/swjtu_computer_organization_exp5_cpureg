@@ -1,14 +1,14 @@
-Fitter Status : Successful - Thu May 04 09:23:47 2023
+Fitter Status : Successful - Thu May 04 11:17:06 2023
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
 Revision Name : exp5
 Top-level Entity Name : exp5
 Family : Cyclone III
 Device : EP3C40F780C8
 Timing Models : Final
-Total logic elements : 253 / 39,600 ( < 1 % )
-    Total combinational functions : 227 / 39,600 ( < 1 % )
-    Dedicated logic registers : 146 / 39,600 ( < 1 % )
-Total registers : 146
+Total logic elements : 121 / 39,600 ( < 1 % )
+    Total combinational functions : 89 / 39,600 ( < 1 % )
+    Dedicated logic registers : 81 / 39,600 ( < 1 % )
+Total registers : 81
 Total pins : 100 / 536 ( 19 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,161,216 ( 0 % )
