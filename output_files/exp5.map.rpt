@@ -1,5 +1,5 @@
 Analysis & Synthesis report for exp5
-Thu May 04 08:26:43 2023
+Thu May 04 09:23:33 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -45,7 +45,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 04 08:26:43 2023       ;
+; Analysis & Synthesis Status        ; Successful - Thu May 04 09:23:33 2023       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; exp5                                        ;
 ; Top-level Entity Name              ; exp5                                        ;
@@ -166,15 +166,18 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                   ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                     ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
-; exp5.v                           ; yes             ; User Verilog HDL File  ; C:/Computer_Organization/exp5/exp5.v             ;         ;
-; key_module.v                     ; yes             ; User Verilog HDL File  ; C:/Computer_Organization/exp5/key_module.v       ;         ;
-; segment_displays.v               ; yes             ; User Verilog HDL File  ; C:/Computer_Organization/exp5/segment_displays.v ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; exp5.v                           ; yes             ; User Verilog HDL File  ; C:/Computer_Organization/exp5/exp5.v                      ;         ;
+; key_module.v                     ; yes             ; User Verilog HDL File  ; C:/Computer_Organization/exp5/key_module.v                ;         ;
+; segment_displays.v               ; yes             ; User Verilog HDL File  ; C:/Computer_Organization/exp5/segment_displays.v          ;         ;
+; count_second.v                   ; yes             ; User Verilog HDL File  ; C:/Computer_Organization/exp5/count_second.v              ;         ;
+; output_files/pc_function.v       ; yes             ; User Verilog HDL File  ; C:/Computer_Organization/exp5/output_files/pc_function.v  ;         ;
+; output_files/reg_function.v      ; yes             ; User Verilog HDL File  ; C:/Computer_Organization/exp5/output_files/reg_function.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -212,8 +215,11 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+
-; |exp5                      ; 227 (83)          ; 146 (88)     ; 0           ; 0            ; 0       ; 0         ; 100  ; 0            ; |exp5                     ; work         ;
+; |exp5                      ; 227 (0)           ; 146 (0)      ; 0           ; 0            ; 0       ; 0         ; 100  ; 0            ; |exp5                     ; work         ;
+;    |count_second:cs|       ; 50 (50)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp5|count_second:cs     ; work         ;
 ;    |keymodule:km|          ; 121 (121)         ; 51 (51)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp5|keymodule:km        ; work         ;
+;    |pc_function:pf|        ; 13 (13)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp5|pc_function:pf      ; work         ;
+;    |reg_function:rf|       ; 20 (20)           ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp5|reg_function:rf     ; work         ;
 ;    |segment_displays:sd|   ; 23 (23)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp5|segment_displays:sd ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -250,12 +256,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |exp5|X[2]                       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |exp5|reg_function:rf|X[2]       ;
 ; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |exp5|keymodule:km|count_num[24] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |exp5|PC[1]~reg0                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |exp5|pc_function:pf|PC[1]       ;
 ; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; Yes        ; |exp5|segment_displays:sd|num[1] ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |exp5|keymodule:km|out[0]        ;
-; 1:1                ; 8 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |exp5|Add2                       ;
+; 1:1                ; 8 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |exp5|pc_function:pf|Add1        ;
 ; 257:1              ; 4 bits    ; 684 LEs       ; 48 LEs               ; 636 LEs                ; No         ; |exp5|keymodule:km|num           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 
@@ -284,7 +290,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Thu May 04 08:26:41 2023
+    Info: Processing started: Thu May 04 09:23:31 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off exp5 -c exp5
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file exp5.v
@@ -295,14 +301,23 @@ Info (12021): Found 1 design units, including 1 entities, in source file segment
     Info (12023): Found entity 1: segment_displays
 Info (12021): Found 1 design units, including 1 entities, in source file midware1.v
     Info (12023): Found entity 1: midware1
+Info (12021): Found 1 design units, including 1 entities, in source file count_second.v
+    Info (12023): Found entity 1: count_second
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/pc_function.v
+    Info (12023): Found entity 1: pc_function
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/reg_function.v
+    Info (12023): Found entity 1: reg_function
 Info (12127): Elaborating entity "exp5" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at exp5.v(47): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at exp5.v(51): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at exp5.v(59): truncated value with size 32 to match size of target (8)
 Info (12128): Elaborating entity "keymodule" for hierarchy "keymodule:km"
 Warning (10230): Verilog HDL assignment warning at key_module.v(22): truncated value with size 16 to match size of target (8)
 Info (12128): Elaborating entity "segment_displays" for hierarchy "segment_displays:sd"
 Warning (10230): Verilog HDL assignment warning at segment_displays.v(9): truncated value with size 32 to match size of target (3)
+Info (12128): Elaborating entity "count_second" for hierarchy "count_second:cs"
+Info (12128): Elaborating entity "pc_function" for hierarchy "pc_function:pf"
+Warning (10230): Verilog HDL assignment warning at pc_function.v(13): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at pc_function.v(17): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at pc_function.v(25): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "reg_function" for hierarchy "reg_function:rf"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "N[8]" is stuck at GND
     Warning (13410): Pin "N[9]" is stuck at GND
@@ -330,8 +345,8 @@ Info (21057): Implemented 371 device resources after synthesis - the final resou
     Info (21059): Implemented 87 output pins
     Info (21061): Implemented 271 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 4643 megabytes
-    Info: Processing ended: Thu May 04 08:26:43 2023
+    Info: Peak virtual memory: 4642 megabytes
+    Info: Processing ended: Thu May 04 09:23:33 2023
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
