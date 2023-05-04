@@ -1,0 +1,11 @@
+module midware1(
+	input wr,
+	input rd,
+	output reg key_out
+);
+
+always@(negedge wr or posedge rd)
+	begin
+		if(!wr&&rd) key_out<=0;
+	end
+endmodule
